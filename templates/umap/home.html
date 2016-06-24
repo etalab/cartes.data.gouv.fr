@@ -1,0 +1,22 @@
+{% extends "umap/content.html" %}
+
+{% load leaflet_storage_tags i18n %}
+
+{% block content %}
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui vertical masthead center aligned segment">
+
+    {% block navigation %}
+      {% include 'umap/navigation.html' %}
+    {% endblock navigation %}
+
+    {% include "umap/search_bar.html" %}
+
+    {% include "umap/summary.html" %}
+
+  </div>
+</div>
+
+{% endblock content %}
