@@ -1,0 +1,25 @@
+{% load static from staticfiles %}
+
+<div class="ui container">
+  <div class="ui large secondary pointing menu">
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+    <div class="left item">
+        <img class="ui tiny image" src="{% static "umap/img/logo.png" %}">
+    </div>
+    {% if user.is_authenticated %}
+      <a class="active item" href="{% url 'user_maps' user.username %}">Ma carte ({{ user }})</a>
+    {% else %}
+      <a class="active item" href="{% url 'login' %}">Connexion / Créer un compte</a>
+    {% endif %}
+    <a class="item" href="{% url 'about' %}">À propos</a>
+    <a class="item" href="{{ UMAP_FEEDBACK_LINK }}">Feedback</a>
+    <div class="right item">
+      <a class="ui blue button" href="{% url 'map_new' %}">Créer une carte</a>
+      {% if user.is_authenticated %}
+      <a class="ui red button" href="{% url 'logout' %}">Déconnexion <i class="right power icon"></i></a>
+      {% endif %}
+    </div>
+  </div>
+</div>

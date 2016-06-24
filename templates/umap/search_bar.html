@@ -1,0 +1,6 @@
+<div class="ui" action="{% url 'search' %}" method="GET">
+	<div class="ui container massive action input search_bar">
+		<input name="q" type="search" placeholder="Chercher des cartes" value="{{ q|default:"" }}" >
+		<input type="submit" class="ui button">Rechercher </button>
+	</div>
+</div>

@@ -1,6 +1,7 @@
 {% extends "umap/content.html" %}
 
-{% load leaflet_storage_tags i18n %}
+{% load static from staticfiles %}
+{% load leaflet_storage_tags %}
 
 {% block content %}
 
@@ -12,9 +13,17 @@
       {% include 'umap/navigation.html' %}
     {% endblock navigation %}
 
-    {% include "umap/search_bar.html" %}
+    {% include "umap/search.html" %}
 
     {% include "umap/summary.html" %}
+
+    <h2 class="ui horizontal divider header"> Liste des cartes </h2>
+
+    <div class="ui container">
+      <div class="map_list">
+        {% include "leaflet_storage/map_list.html" %}
+      </div>
+    </div>
 
   </div>
 </div>
