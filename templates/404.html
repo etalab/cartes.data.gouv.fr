@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div class="content404">
+        <a href="/" title="Retour à l'accueil">
+            <img src="{% static 'umap/img/logo.svg' %}">
+            <h1>404</h1>
+            <h2>Not Found</h2>
+        </a>
+    </div>
+{% endblock %}
