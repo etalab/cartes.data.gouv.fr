@@ -1,9 +1,10 @@
 {% load compress umap_tags i18n %}
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block head_title %}uMap{% endblock %}</title>
-    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" />
     <meta charset="utf-8">
     {% compress css %}
     <!-- Included CSS Files (Compressed) -->
@@ -27,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/sidebar.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/transition.css">
     <!-- <link rel="stylesheet" href="{{ STATIC_URL }}storage/contrib/css/storage.ui.default.css"> -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}umap/umap.css">
+    <link rel="stylesheet" href="{% static "umap/umap.css" %}">
     {% endcompress css %}
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
