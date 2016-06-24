@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% load leaflet_storage_tags compress i18n %}
+
+{% block extra_head %}
+
+  {% compress css %}
+    {% leaflet_storage_css %}
+  {% endcompress css %}
+
+  {% leaflet_storage_js %}
+{% endblock %}
+
+{% block header %}
+  {% block menu %}
+    {% include "umap/menu.html" %}
+  {% endblock menu %}
+{% endblock %}
+
+{% block content %}
+{% endblock content %}
+
+{% block bottom_js %}
+  {{ block.super }}
+  <script type="text/javascript">
+
+    // Dismiss blocks
+    $('.message .close')
+    .on('click', function() {
+      $(this)
+        .closest('.message')
+        .transition('fade');
+    });
+
+    !(function() {
+    var ui = new L.S.UI(document.body);
+    var xhr = new L.S.Xhr(ui);
+    var login = document.querySelector('a.login');
+    if (login) {
+      L.DomEvent.on(login, 'click', function (e) {
+        L.DomEvent.stop(e);
+        xhr.login({
+            "login_required": this.getAttribute('href'),
+            "redirect": "/"
+        });
+      });
+    }
+    var logout = document.querySelector('a.logout');
+    if (logout) {
+      L.DomEvent.on(logout, 'click', function (e) {
+        L.DomEvent.stop(e);
+        xhr.logout(this.getAttribute('href'));
+      });
+    }
+    var getMore = function (e) {
+      L.DomEvent.stop(e);
+      xhr._ajax({
+        uri: this.href,
+        verb: 'GET',
+        callback: function (data) {
+            var container = this.parentNode;
+            container.innerHTML = data;
+            Array.prototype.forEach.call(container.querySelectorAll('script'), function (item) {
+                eval(item.firstChild.textContent);
+            });
+            var more = document.querySelector('.more_button');
+            if (more) {
+              L.DomEvent.on(more, 'click', getMore, more);
+            }
+        },
+        context: this
+      });
+    };
+    var more = document.querySelector('.more_button');
+    if (more) {
+      L.DomEvent.on(more, 'click', getMore, more);
+    }
+    })(this);
+  </script>
+{% endblock bottom_js %}
+
