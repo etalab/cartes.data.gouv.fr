@@ -131,3 +131,10 @@ a { color: inherit; }
   margin-top: -5%;
   padding-bottom: 5%;
 }
+
+/* **************************** */
+/*          map fragment        */
+/* **************************** */
+.map_fragment {
+  height: 400px;
+}
