@@ -117,6 +117,10 @@ a { color: inherit; }
     width: 32%;
 }
 
+.button, input[type="submit"], input[type="search"] {
+  width: auto;
+}
+
 /* **************************** */
 /*          search_bar          */
 /* **************************** */
