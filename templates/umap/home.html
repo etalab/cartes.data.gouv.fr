@@ -13,7 +13,9 @@
       {% include 'umap/navigation.html' %}
     {% endblock navigation %}
 
-    {% include "umap/search.html" %}
+    {% block search %}
+      {% include "umap/search_bar.html" %}
+    {% endblock search %}
 
     {% include "umap/summary.html" %}
 
