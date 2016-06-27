@@ -8,7 +8,9 @@
     {% leaflet_storage_css %}
   {% endcompress css %}
 
-  {% leaflet_storage_js %}
+  {% compress js %}
+    {% leaflet_storage_js %}
+  {% endcompress js %}
 {% endblock %}
 
 {% block header %}
@@ -35,9 +37,9 @@
     !(function() {
     var ui = new L.S.UI(document.body);
     var xhr = new L.S.Xhr(ui);
-    var login = document.querySelector('a.login');
-    if (login) {
-      L.DomEvent.on(login, 'click', function (e) {
+    var logins = document.querySelectorAll('a.login');
+    for (var i = 0; i < logins.length; i++) {
+      L.DomEvent.on(logins[i], 'click', function (e) {
         L.DomEvent.stop(e);
         xhr.login({
             "login_required": this.getAttribute('href'),
