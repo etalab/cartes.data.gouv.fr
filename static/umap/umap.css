@@ -126,6 +126,30 @@ a { color: inherit; }
   height: auto;
 }
 
+/* **************** */
+/*    Login icons   */
+/* **************** */
+.login-grid li,
+.login-grid a {
+    display: inline-block;
+}
+
+.login-grid a {
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+    color: #000;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 142px 85px;
+    height: 86px;
+    width: 142px;
+    margin-right: 10px;
+}
+
+.login-grid .login-datagouv {
+    background-image: url("../datagouv.png");
+}
+
 /* **************************** */
 /*          search_bar          */
 /* **************************** */
