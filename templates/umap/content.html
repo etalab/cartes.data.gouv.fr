@@ -1,15 +1,60 @@
 {% extends "base.html" %}
 
+{% load static from staticfiles %}
 {% load leaflet_storage_tags compress %}
 
 {% block extra_head %}
 
   {% compress css %}
     {% leaflet_storage_css %}
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/reset.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/site.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/container.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/grid.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/header.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/image.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/menu.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/message.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/input.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/divider.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/segment.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/button.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/list.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/icon.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/sidebar.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/transition.css" %}">
   {% endcompress css %}
 
   {% compress js %}
     {% leaflet_storage_js %}
+    <script src="{% static "jquery-3.0.0.js" %}"></script>
+    <script src="{% static "semantic-ui/js/visibility.js" %}"></script>
+    <script src="{% static "semantic-ui/js/sidebar.js" %}"></script>
+    <script src="{% static "semantic-ui/js/transition.js" %}"></script>
+    <script>
+    $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        });
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item');
+
+    });
+    </script>
   {% endcompress js %}
 {% endblock %}
 
