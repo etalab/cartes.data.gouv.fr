@@ -16,9 +16,9 @@
     <a class="item" href="{% url 'about' %}">À propos</a>
     <a class="item" href="https://forum.etalab.gouv.fr/">Feedback</a>
     <div class="right item">
-      <a class="ui blue button" href="{% url 'map_new' %}">Créer une carte</a>
+      <a class="ui blue button menu computer only" href="{% url 'map_new' %}">Créer une carte</a>
       {% if user.is_authenticated %}
-      <a class="ui red button logout" href="{% url 'logout' %}">Déconnexion <i class="right power icon"></i></a>
+        <a class="ui red button logout menu computer only" href="{% url 'logout' %}">Déconnexion <i class="right power icon"></i></a>
       {% endif %}
     </div>
   </div>
