@@ -3,31 +3,14 @@
 {% load static from staticfiles %}
 {% load leaflet_storage_tags %}
 
-{% block content %}
+{% block maincontent %}
 
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui vertical masthead center aligned segment">
+  {% include "umap/summary.html" %}
 
-    {% block navigation %}
-      {% include 'umap/navigation.html' %}
-    {% endblock navigation %}
+  <h2 class="ui horizontal divider header"> Liste des cartes </h2>
 
-    {% block search %}
-      {% include "umap/search_bar.html" %}
-    {% endblock search %}
-
-    {% include "umap/summary.html" %}
-
-    <h2 class="ui horizontal divider header"> Liste des cartes </h2>
-
-    <div class="ui container">
-      <div class="map_list">
-        {% include "leaflet_storage/map_list.html" %}
-      </div>
-    </div>
-
+  <div class="map_list">
+    {% include "leaflet_storage/map_list.html" %}
   </div>
-</div>
 
-{% endblock content %}
+{% endblock maincontent %}
