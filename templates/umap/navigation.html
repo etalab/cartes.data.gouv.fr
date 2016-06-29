@@ -14,7 +14,7 @@
       <a class="active item login" href="{% url 'login' %}">Connexion / Créer un compte</a>
     {% endif %}
     <a class="item" href="{% url 'about' %}">À propos</a>
-    <a class="item" href="{{ UMAP_FEEDBACK_LINK }}">Feedback</a>
+    <a class="item" href="https://forum.etalab.gouv.fr/">Feedback</a>
     <div class="right item">
       <a class="ui blue button" href="{% url 'map_new' %}">Créer une carte</a>
       {% if user.is_authenticated %}
