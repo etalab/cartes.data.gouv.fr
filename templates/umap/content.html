@@ -45,16 +45,31 @@
   {% endcompress js %}
 {% endblock %}
 
-{% block header %}
-  {% block menu %}
-    {% include "umap/menu.html" %}
-  {% endblock menu %}
-{% endblock %}
 
 {% block content %}
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui vertical masthead center aligned segment">
+
+    {% include 'umap/navigation.html' %}
+    {% include "umap/menu.html" %}
+
+    {% block search %}
+      {% include "umap/search_bar.html" %}
+    {% endblock search %}
+
+    <div class="ui container">
+      {% block maincontent %}
+      {% endblock maincontent %}
+    </div>
+  </div>
+</div>
+
 {% endblock content %}
 
 {% block bottom_js %}
+
   {{ block.super }}
   <script type="text/javascript">
 
