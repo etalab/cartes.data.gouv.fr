@@ -151,11 +151,38 @@ a { color: inherit; }
 }
 
 /* **************************** */
+/*          Map Title           */
+/* **************************** */
+.legend {
+    background-color: #2185D0;
+    color: #ffffff;
+    width: inherit;
+    margin: 0 auto 15px auto;
+    padding: 10px;
+
+    font-size: 1.33em;
+    font-style: normal;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.legend a {
+  color: inherit;
+  font-weight: bold;
+}
+
+.legend a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+
+/* **************************** */
 /*          search_bar          */
 /* **************************** */
 .search_bar {
   padding-top: 20px;
 }
+
+
 
 /* **************************** */
 /*            summary           */
