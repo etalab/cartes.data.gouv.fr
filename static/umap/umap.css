@@ -153,26 +153,35 @@ a { color: inherit; }
 /* **************************** */
 /*          Map Title           */
 /* **************************** */
-.legend {
-    background-color: #2185D0;
-    color: #ffffff;
+.legend em {
     width: inherit;
     margin: 0 auto 15px auto;
     padding: 10px;
 
     font-size: 1.33em;
     font-style: normal;
-    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
-.legend a {
+
+.legend em {
+    width: inherit;
+    margin: 0 auto 15px auto;
+    padding: 10px;
+
+    font-size: 1.33em;
+    font-style: normal;
+    font-weight: 200;
+}
+
+.legend > a {
   color: inherit;
   font-weight: bold;
 }
 
-.legend a:hover {
+/*.legend a:hover {
   color: #000000;
   text-decoration: underline;
-}
+}*/
 
 
 /* **************************** */

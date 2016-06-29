@@ -9,7 +9,7 @@
         <a href="/"><img class="ui tiny image" src="{% static "umap/img/logo.png" %}"></a>
     </div>
     {% if user.is_authenticated %}
-      <a class="active item" href="{% url 'user_maps' user.username %}">Ma carte ({{ user }})</a>
+      <a class="active item" href="{% url 'user_maps' user.username %}">Mes cartes ({{ user }})</a>
     {% else %}
       <a class="active item login" href="{% url 'login' %}">Connexion / Créer un compte</a>
     {% endif %}
