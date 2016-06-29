@@ -93,9 +93,9 @@
         });
       });
     }
-    var logout = document.querySelector('a.logout');
-    if (logout) {
-      L.DomEvent.on(logout, 'click', function (e) {
+    var logouts = document.querySelectorAll('a.logout');
+    for (var i = 0; i < logouts.length; i++) {
+      L.DomEvent.on(logouts[i], 'click', function (e) {
         L.DomEvent.stop(e);
         xhr.logout(this.getAttribute('href'));
       });
