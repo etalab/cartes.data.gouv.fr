@@ -6,10 +6,9 @@ class DataGouvOAuth2(BaseOAuth2):
     ACCESS_TOKEN_URL = 'https://www.data.gouv.fr/oauth/token'
     AUTHORIZATION_URL = 'https://www.data.gouv.fr/oauth/authorize'
     SCOPE_SEPARATOR = ','
-    # EXTRA_DATA = [
-    #     ('id', 'id'),
-    #     ('expires', 'expires')
-    # ]
+    REDIRECT_STATE = False
+    DEFAULT_SCOPE = ['default']
+    ACCESS_TOKEN_METHOD = 'POST'
 
     def get_user_details(self, response):
         """Return user details from DataGouv account"""
@@ -19,10 +18,5 @@ class DataGouvOAuth2(BaseOAuth2):
 
     def user_data(self, access_token, *args, **kwargs):
         """Loads user data from service"""
-        url = 'https://www.data.gouv.fr/api/1/?' + urlencode({
-            'access_token': access_token
-        })
-        try:
-            return json.load(self.urlopen(url))
-        except ValueError:
-            return None
+        return self.get_json('https://www.data.gouv.fr/api/1/me/', params={
+            'access_token': access_token})
