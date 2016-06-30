@@ -12,7 +12,7 @@ class DataGouvOAuth2(BaseOAuth2):
 
     def get_user_details(self, response):
         """Return user details from DataGouv account"""
-        return {'username': response.get('last_name'),
+        return {'username': response.get('first_name'),
                 'email': response.get('email') or '',
                 'first_name': response.get('first_name')}
 
