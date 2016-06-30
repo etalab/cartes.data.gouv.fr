@@ -1,0 +1,16 @@
+{% extends "umap/home.html" %}
+
+{% block search %}
+{% include "umap/search_bar.html" %}
+{% if q %}
+<div class="ui container">
+    {% if maps %}
+      {% include "leaflet_storage/map_list.html" with prefix="search_" %}
+    {% else %}
+    <div class="ui raised segment">
+        Aucune carte trouvée.
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock search %}
