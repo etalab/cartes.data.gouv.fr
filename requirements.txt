@@ -1,1 +1,2 @@
 git+https://github.com/umap-project/umap
+git+https://github.com/umap-project/django-leaflet-storage
