@@ -2,18 +2,18 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical sidebar menu">
-  <div class="item">
-    <img class="ui mini image" src="{% static "umap/img/logo-marianne.gif" %}">
-  </div>
-  {% if user.is_authenticated %}
-    <a class="active item" href="{% url 'user_maps' user.username %}">Ma carte ({{ user }})</a>
-  {% else %}
-    <a class="active item login" href="{% url 'login' %}">Connexion / Créer un compte</a>
-  {% endif %}
-  <a class="item" href="{% url 'about' %}">À propos</a>
-  <a class="item" href="https://forum.etalab.gouv.fr/">Feedback</a>
-  <a class="item" href="{% url 'map_new' %}">Créer une carte</a>
-  {% if user.is_authenticated %}
-    <a class="item logout" href="{% url 'logout' %}">Déconnexion <i class="right power icon"></i></a>
-  {% endif %}
+    <div class="item">
+        <img class="ui mini image" src="{% static "umap/img/logo-marianne.gif" %}">
+    </div>
+    {% if user.is_authenticated %}
+      <a class="active item" href="{% url 'user_maps' user.username %}">Ma carte ({{ user }})</a>
+    {% else %}
+      <a class="active item login" href="{% url 'login' %}">Connexion / Créer un compte</a>
+    {% endif %}
+    <a class="item" href="{% url 'about' %}">À propos</a>
+    <a class="item" href="https://forum.etalab.gouv.fr/">Feedback</a>
+    <a class="item" href="{% url 'map_new' %}">Créer une carte</a>
+    {% if user.is_authenticated %}
+      <a class="item logout" href="{% url 'logout' %}">Déconnexion <i class="right power icon"></i></a>
+    {% endif %}
 </div>

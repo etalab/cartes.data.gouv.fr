@@ -2,9 +2,10 @@
 {% load static from staticfiles %}
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>{% block head_title %}Cartes Data Gouv{% endblock %}</title>
-    <link rel="shortcut icon" href="{% static "favicon.ico" %}" />
+    <link rel="shortcut icon" href="{% static " favicon.ico " %}" />
     <meta charset="utf-8">
     {% compress css %}
     <!-- Included CSS Files (Compressed) -->
@@ -15,30 +16,28 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    {% block extra_head %}
-    {% endblock extra_head %}
+    {% block extra_head %} {% endblock extra_head %}
 
     {% compress js %}
-      <script src="{{ STATIC_URL }}umap/js/autocomplete.js"></script>
+    <script src="{{ STATIC_URL }}umap/js/autocomplete.js"></script>
     {% endcompress js %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
+
 <body>
 
-  {% block header %}
-  {% endblock header %}
+    {% block header %} {% endblock header %}
 
-  {% block content %}
-  {% endblock content %}
+    {% block content %} {% endblock content %}
 
-  {% block bottom_js %}
-  {% endblock bottom_js %}
+    {% block bottom_js %} {% endblock bottom_js %}
 
-  {% block footer %}
+    {% block footer %}
       {% include "umap/footer.html" %}
-  {% endblock footer %}
+    {% endblock footer %}
 
 
 </body>
+
 </html>

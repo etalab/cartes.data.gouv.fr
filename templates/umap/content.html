@@ -4,127 +4,123 @@
 {% load leaflet_storage_tags compress %}
 
 {% block extra_head %}
+{% compress css %}
+{% leaflet_storage_css %}
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/fonts.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/reset.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/site.css" %}">
 
-  {% compress css %}
-    {% leaflet_storage_css %}
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/fonts.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/reset.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/site.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/container.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/grid.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/header.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/image.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/menu.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/message.css" %}">
 
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/container.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/grid.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/header.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/image.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/menu.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/message.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/input.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/divider.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/segment.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/button.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/list.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/icon.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/sidebar.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/transition.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "umap/umap.css" %}">
+{% endcompress css %}
 
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/input.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/divider.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/segment.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/button.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/list.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/icon.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/sidebar.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "semantic-ui/css/transition.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "umap/umap.css" %}">
-  {% endcompress css %}
-
-  {% compress js %}
-    {% leaflet_storage_js %}
-    <script src="{% static "jquery-3.0.0.js" %}"></script>
-    <script src="{% static "semantic-ui/js/visibility.js" %}"></script>
-    <script src="{% static "semantic-ui/js/sidebar.js" %}"></script>
-    <script src="{% static "semantic-ui/js/transition.js" %}"></script>
-    <script>
+{% compress js %}
+{% leaflet_storage_js %}
+<script src="{% static "jquery-3.0.0.js" %}"></script>
+<script src="{% static "semantic-ui/js/visibility.js" %}"></script>
+<script src="{% static "semantic-ui/js/sidebar.js" %}"></script>
+<script src="{% static "semantic-ui/js/transition.js" %}"></script>
+<script>
     $(document)
-    .ready(function() {
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item');
-    });
-    </script>
-  {% endcompress js %}
-{% endblock %}
-
+        .ready(function() {
+            // create sidebar and attach to menu open
+            $('.ui.sidebar')
+                .sidebar('attach events', '.toc.item');
+        });
+</script>
+{% endcompress js %}
+{% endblock extra_head %}
 
 {% block content %}
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui vertical masthead center aligned segment">
+    <div class="ui vertical masthead center aligned segment">
 
-    {% include 'umap/navigation.html' %}
-    {% include "umap/menu.html" %}
+        {% include 'umap/navigation.html' %}
 
-    {% block search %}
-      {% include "umap/search_bar.html" %}
-    {% endblock search %}
+        {% include "umap/menu.html" %}
 
-    <div class="ui container">
-      {% block maincontent %}
-      {% endblock maincontent %}
+        {% block search %}
+        {% include "umap/search_bar.html" %}
+        {% endblock search %}
+
+        <div class="ui container">
+            {% block maincontent %} {% endblock maincontent %}
+        </div>
     </div>
-  </div>
 </div>
 
 {% endblock content %}
 
 {% block bottom_js %}
-
-  {{ block.super }}
-  <script type="text/javascript">
-
+{{ block.super }}
+<script type="text/javascript">
     // Dismiss blocks
     $('.message .close')
-    .on('click', function() {
-      $(this)
-        .closest('.message')
-        .transition('fade');
-    });
+        .on('click', function() {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
 
     !(function() {
-    var ui = new L.S.UI(document.body);
-    var xhr = new L.S.Xhr(ui);
-    var logins = document.querySelectorAll('a.login');
-    for (var i = 0; i < logins.length; i++) {
-      L.DomEvent.on(logins[i], 'click', function (e) {
-        L.DomEvent.stop(e);
-        xhr.login({
-            "login_required": this.getAttribute('href'),
-            "redirect": "/"
-        });
-      });
-    }
-    var logouts = document.querySelectorAll('a.logout');
-    for (var i = 0; i < logouts.length; i++) {
-      L.DomEvent.on(logouts[i], 'click', function (e) {
-        L.DomEvent.stop(e);
-        xhr.logout(this.getAttribute('href'));
-      });
-    }
-    var getMore = function (e) {
-      L.DomEvent.stop(e);
-      xhr._ajax({
-        uri: this.href,
-        verb: 'GET',
-        callback: function (data) {
-            var container = this.parentNode;
-            container.innerHTML = data;
-            Array.prototype.forEach.call(container.querySelectorAll('script'), function (item) {
-                eval(item.firstChild.textContent);
+        var ui = new L.S.UI(document.body);
+        var xhr = new L.S.Xhr(ui);
+        var logins = document.querySelectorAll('a.login');
+        for (var i = 0; i < logins.length; i++) {
+            L.DomEvent.on(logins[i], 'click', function(e) {
+                L.DomEvent.stop(e);
+                xhr.login({
+                    "login_required": this.getAttribute('href'),
+                    "redirect": "/"
+                });
             });
-            var more = document.querySelector('.more_button');
-            if (more) {
-              L.DomEvent.on(more, 'click', getMore, more);
-            }
-        },
-        context: this
-      });
-    };
-    var more = document.querySelector('.more_button');
-    if (more) {
-      L.DomEvent.on(more, 'click', getMore, more);
-    }
+        }
+        var logouts = document.querySelectorAll('a.logout');
+        for (var i = 0; i < logouts.length; i++) {
+            L.DomEvent.on(logouts[i], 'click', function(e) {
+                L.DomEvent.stop(e);
+                xhr.logout(this.getAttribute('href'));
+            });
+        }
+        var getMore = function(e) {
+            L.DomEvent.stop(e);
+            xhr._ajax({
+                uri: this.href,
+                verb: 'GET',
+                callback: function(data) {
+                    var container = this.parentNode;
+                    container.innerHTML = data;
+                    Array.prototype.forEach.call(container.querySelectorAll('script'), function(item) {
+                        eval(item.firstChild.textContent);
+                    });
+                    var more = document.querySelector('.more_button');
+                    if (more) {
+                        L.DomEvent.on(more, 'click', getMore, more);
+                    }
+                },
+                context: this
+            });
+        };
+        var more = document.querySelector('.more_button');
+        if (more) {
+            L.DomEvent.on(more, 'click', getMore, more);
+        }
     })(this);
-  </script>
+</script>
 {% endblock bottom_js %}
