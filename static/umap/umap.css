@@ -161,35 +161,24 @@ a { color: inherit; }
 /* **************************** */
 /*          Map Title           */
 /* **************************** */
-.legend em {
+.legend {
     width: inherit;
-    margin: 0 auto 15px auto;
-    padding: 10px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
 
     font-size: 1.33em;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .legend em {
-    width: inherit;
-    margin: 0 auto 15px auto;
-    padding: 10px;
-
-    font-size: 1.33em;
-    font-style: normal;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 .legend > a {
   color: inherit;
   font-weight: bold;
 }
-
-/*.legend a:hover {
-  color: #000000;
-  text-decoration: underline;
-}*/
 
 
 /* **************************** */
