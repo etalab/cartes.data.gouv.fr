@@ -126,12 +126,16 @@ a { color: inherit; }
   height: auto;
 }
 
-#storage-ui-container {
-  position: inherit;
+@media (orientation: portrait) {
+  #storage-ui-container {
+    position: fixed;
+    left: inherit;
+    right: -100%;
+  }
 }
 
-.leaflet-ui-container {
-  height: 0px;
+#storage-ui-container {
+  position: fixed;
 }
 
 /* **************** */
