@@ -126,6 +126,14 @@ a { color: inherit; }
   height: auto;
 }
 
+#storage-ui-container {
+  position: inherit;
+}
+
+.leaflet-ui-container {
+  height: 0px;
+}
+
 /* **************** */
 /*    Login icons   */
 /* **************** */
