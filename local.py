@@ -6,7 +6,7 @@ PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 SECRET_KEY = "the answer to life the universe and everything"
 INTERNAL_IPS = ('127.0.0.1', )
-ALLOWED_HOSTS = ['cartes.data.gouv.fr', ]
+ALLOWED_HOSTS = ['cartes.data.gouv.fr', 'localhost', '127.0.0.1']
 
 DEBUG = True
 
