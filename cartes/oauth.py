@@ -1,4 +1,5 @@
-from social.backends.oauth import BaseOAuth2
+from social_core.backends.oauth import BaseOAuth2
+
 
 class DataGouvOAuth2(BaseOAuth2):
     """DataGouv OAuth authentication backend"""

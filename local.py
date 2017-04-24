@@ -47,7 +47,7 @@ SOCIAL_AUTH_DATAGOUV_KEY = os.environ.get('DATAGOUV_KEY')
 SOCIAL_AUTH_DATAGOUV_SECRET = os.environ.get('DATAGOUV_SECRET')
 
 MIDDLEWARE_CLASSES += (
-    'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 )
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 SOCIAL_AUTH_BACKEND_ERROR_URL = "/"
