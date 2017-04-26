@@ -27,8 +27,6 @@ TEMPLATES[0]['DIRS'].insert(0, os.path.join(PROJECT_DIR, "templates"))
 
 STATICFILES_DIRS = (
     (os.path.join(PROJECT_DIR, "static")),
-    ("storage", os.path.join(PROJECT_DIR, "../LeafletStorage/")),
-    ("reqs", os.path.join(PROJECT_DIR, "../LeafletStorage/reqs/")),
 ) + STATICFILES_DIRS
 
 WSGI_APPLICATION = 'umap.wsgi.application'
