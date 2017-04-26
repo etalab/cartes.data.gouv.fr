@@ -1,16 +1,21 @@
 {% extends "umap/content.html" %}
 
 {% load static from staticfiles %}
-{% load leaflet_storage_tags %}
 
 {% block maincontent %}
+{% include "umap/search_bar.html" %}
 
-{% include "umap/summary.html" %}
+<div class="wrapper row summary">
+    <h2>{{ SITE_NAME }}</h2>
+    <p>Visualiser et partager les données géographiques facilement.</p>
+    <p><a href="{% url 'map_new' %}" class="button">Créer une carte<i class="right edit icon"></i></a></p>
+</div>
 
-<h2 class="ui horizontal divider header">Liste des cartes</h2>
-
-<div class="map_list">
+<div class="wrapper">
+  <div class="map_list row">
+    <h2>Les dernières cartes</h2>
     {% include "leaflet_storage/map_list.html" %}
+  </div>
 </div>
 
 {% endblock maincontent %}

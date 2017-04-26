@@ -81,13 +81,16 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # CREATE EXTENSION unaccent;
 UMAP_USE_UNACCENT = True
 
-# For static deployment
-STATIC_ROOT = os.path.join(PROJECT_DIR, "../.venv/umap/var/static")
+# For static deployment
+STATIC_ROOT = os.environ.get('STATIC_ROOT')
 
-# For users' statics (geojson mainly)
-MEDIA_ROOT = os.path.join(PROJECT_DIR, "../.venv/umap/var/uploads")
+# For users' statics (geojson mainly)
+MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
 
 # Default map location for new maps
 LEAFLET_LONGITUDE = 2
 LEAFLET_LATITUDE = 51
 LEAFLET_ZOOM = 6
+
+UMAP_FEEDBACK_LINK = 'https://forum.etalab.gouv.fr/'
+SITE_NAME = 'cartes.data.gouv.fr'
