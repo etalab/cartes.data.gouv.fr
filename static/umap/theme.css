@@ -1,16 +1,15 @@
 /* **************************** */
 /*           navigation         */
 /* **************************** */
-nav h1 a {
+.umap-nav h1 a {
     background-image: url('./img/logo-marianne.gif');
+}
+.umap-nav h1 small {
+    font-size: .9rem;
 }
 .login-grid .login-datagouv {
     background-image: url('../datagouv.png');
 }
-.branding {
-    width: 33%;
-}
-
 
 /* **************************** */
 /*             Forms            */
@@ -35,42 +34,19 @@ input[type="submit"]:hover, .button:hover {
     padding-top: 10px;
 }
 .map_list .map_fragment {
-  height: 400px;
-}
-.map_list h2 {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 2em;
+    height: 60vh;
 }
 .summary {
     background-color: transparent;
     text-align: center;
 }
-.summary h2 {
-    font-size: 4em;
-}
 .summary p {
-    font-size: 2em;
-    line-height: 1.5em;
+    font-size: 1.3em;
+    line-height: 1.4em;
     margin-bottom: 10px;
+    max-width: 250px;
+    margin: 0 auto;
 }
-.summary .button {
-    display: inline;
-}
-
-/* **************************** */
-/*            footer            */
-/* **************************** */
-footer {
-    padding-top: 40px;
-    height: 200px;
-    line-height: 1.3em;
-    font-size: 1.2em;
-    background-color: #222;
-}
-footer h4 {
-    color: white;
-}
-footer a {
-    color: #ddd;
+.wrapper .neutral:hover {
+    background-color: #ccc;
 }

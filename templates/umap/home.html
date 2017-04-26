@@ -2,20 +2,19 @@
 
 {% load static from staticfiles %}
 
+{% block head_title %}Cartes par data.gouv.fr{% endblock %}
+
 {% block maincontent %}
-{% include "umap/search_bar.html" %}
-
-<div class="wrapper row summary">
-    <h2>{{ SITE_NAME }}</h2>
-    <p>Visualiser et partager les données géographiques facilement.</p>
-    <p><a href="{% url 'map_new' %}" class="button">Créer une carte<i class="right edit icon"></i></a></p>
-</div>
-
-<div class="wrapper">
-  <div class="map_list row">
-    <h2>Les dernières cartes</h2>
-    {% include "leaflet_storage/map_list.html" %}
+  {% include "umap/search_bar.html" %}
+  <div class="wrapper row summary">
+    <h2>Visualiser et partager les données géographiques facilement.</h2>
   </div>
-</div>
-
+  <div class="wrapper">
+    <div class="map_list row">
+      {% include "leaflet_storage/map_list.html" %}
+    </div>
+  </div>
+  <div class="wrapper row summary">
+    <p><a href="{% url 'map_new' %}" class="button">Ajouter votre carte</a></p>
+  </div>
 {% endblock maincontent %}
