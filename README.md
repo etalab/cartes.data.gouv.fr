@@ -21,6 +21,10 @@ Clone project:
     git clone https://github.com/etalab/cartes.data.gouv.fr
     cd cartes.data.gouv.fr
     export UMAP_SETTINGS=`pwd`/local.py
+    export STATIC_ROOT=`pwd`/static_root/
+    export MEDIA_ROOT=`pwd`/media_root/
+    export DATAGOUV_SECRET=''
+    export DATAGOUV_KEY=''
 
 Create a virtualenv:
 
@@ -28,10 +32,10 @@ Create a virtualenv:
     source umap/bin/activate
 
 Install umap:
+
     pip install umap-project
     umap migrate
-    umap collectstatic
-    umap compress
+    umap storagei18n
 
 Create a superuser:
 
