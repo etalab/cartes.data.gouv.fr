@@ -70,7 +70,7 @@
        inkscape:export-ydpi="28.799999" />
     <path
        sodipodi:type="arc"
-       style="fill:#444444;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path2987"
        sodipodi:cx="60"
        sodipodi:cy="58"
@@ -79,7 +79,7 @@
        d="M 100,58 A 40,40 0 0 1 60,98 40,40 0 0 1 20,58 40,40 0 0 1 60,18 40,40 0 0 1 100,58 Z"
        transform="matrix(1.6,0,0,1.6,-32,895.56218)" />
     <circle
-       style="fill:none;stroke:#999999;stroke-width:8.07301807;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:8.07301807;stroke-opacity:1"
        cx="64"
        cy="988.36218"
        r="35.521278"
@@ -88,6 +88,6 @@
        inkscape:connector-curvature="0"
        d="m 63.677083,966.16136 c -10.494925,0 -19.294516,7.34645 -21.554961,17.19552 h 10.575653 c 1.937525,-4.19797 6.135496,-7.10423 10.979308,-7.10423 6.700604,0 12.109525,5.40889 12.109525,12.10952 0,6.70052 -5.408921,12.10943 -12.109525,12.10943 -4.843812,0 -9.041783,-2.90609 -10.979308,-7.02341 H 42.122122 c 2.260445,9.76841 11.060036,17.11481 21.554961,17.11481 12.270986,0 22.200802,-9.9298 22.200802,-22.20083 0,-12.27099 -9.929816,-22.20081 -22.200802,-22.20081 z"
        id="path6"
-       style="fill:#ffffff;fill-opacity:1;stroke-width:1.01444507" />
+       style="fill:#555555;fill-opacity:1;stroke-width:1.01444507" />
   </g>
 </svg>

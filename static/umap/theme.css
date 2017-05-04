@@ -50,3 +50,6 @@ input[type="submit"]:hover, .button:hover {
 .wrapper .neutral:hover {
     background-color: #ccc;
 }
+.highlights img.colophon {
+    height: 90px;
+}

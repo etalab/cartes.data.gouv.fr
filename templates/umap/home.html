@@ -5,10 +5,8 @@
 {% block head_title %}Cartes par data.gouv.fr{% endblock %}
 
 {% block maincontent %}
+  {% include "umap/about_summary.html" %}
   {% include "umap/search_bar.html" %}
-  <div class="wrapper row summary">
-    <h2>Visualiser et partager les données géographiques facilement.</h2>
-  </div>
   <div class="wrapper">
     <div class="map_list row">
       {% include "leaflet_storage/map_list.html" %}

@@ -20,7 +20,7 @@
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
-     bordercolor="#666666"
+     bordercolor="#999999"
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
@@ -70,7 +70,7 @@
        inkscape:export-ydpi="28.799999" />
     <path
        sodipodi:type="arc"
-       style="fill:#444444;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path2987"
        sodipodi:cx="60"
        sodipodi:cy="58"
@@ -79,7 +79,7 @@
        d="M 100,58 A 40,40 0 0 1 60,98 40,40 0 0 1 20,58 40,40 0 0 1 60,18 40,40 0 0 1 100,58 Z"
        transform="matrix(1.6,0,0,1.6,-32,895.56218)" />
     <path
-       style="fill:#999999;fill-opacity:1;stroke:none"
+       style="fill:#555555;fill-opacity:1;stroke:none"
        d="m 94.287509,941.65675 -8.169617,8.16962 16.339228,16.33922 8.16962,-8.1696 z"
        id="path5261" />
     <path
@@ -87,7 +87,7 @@
        d="m 82.033084,953.91118 -44.93289,44.93277 16.339234,16.33925 44.932889,-44.9328 z"
        id="path5259" />
     <path
-       style="fill:#999999;fill-opacity:1;stroke:none"
+       style="fill:#555555;fill-opacity:1;stroke:none"
        d="M 37.100194,998.84395 24.84577,1027.4376 53.439428,1015.1832 z"
        id="path3684" />
     <text

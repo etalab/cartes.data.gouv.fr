@@ -1,0 +1,34 @@
+<div class="wrapper row summary">
+  <h2>Visualiser et partager les données géographiques facilement.</h2>
+</div>
+<div class="wrapper about_summary highlights">
+  <div class="row">
+    <div class="col third mwide">
+      <img class="colophon" src="{{ STATIC_URL }}umap/img/osm.svg" />
+      <p>
+        Ce service permet de créer des cartes personnalisées en un instant et de les partager.
+      </p>
+      <p>Les équipes d’<a href="http://www.etalab.gouv.fr/">Etalab</a> s’engagent à maintenir ce service au cours des 3 prochaines années et à en assurer une haute disponibilité.
+      </p>
+    </div>
+    <div class="col third mwide">
+      <img class="colophon" src="{{ STATIC_URL }}umap/img/edit.svg" />
+      <ol>
+        <li>Cliquez sur le bouton <a href="{% url 'map_new' %}">Créer une carte</a></li>
+        <li>Personnalisez votre carte avec des chemins, des points d’intérêt, des formes, etc.</li>
+        <li>Sauvegardez votre carte en utilisant votre identifiant <a href="https://www.data.gouv.fr/fr/">data.gouv.fr</a></li>
+        <li>Partagez la carte avec vos collaborateurs et mettez-les à contribution</li>
+        <li>Intégrez votre travail sur votre site internet ou partagez-la sur les réseaux sociaux</li>
+      </ol>
+    </div>
+    <div class="col third mwide">
+      <img class="colophon" src="{{ STATIC_URL }}umap/img/opensource.svg" />
+      <p>
+        Ce projet est <a href="https://github.com/etalab/cartes.data.gouv.fr">open-source</a> et basé sur <a href="http://wiki.openstreetmap.org/wiki/UMap">umap</a> (un projet d’<a href="http://www.openstreetmap.org">OpenStreetMap</a>). Vous pouvez nous remonter vos <a href="https://github.com/etalab/cartes.data.gouv.fr/issues">bugs</a> propres à la plateforme ainsi que vos propositions d’améliorations.
+      </p>
+      <p>
+        Toutes les cartes créées sont publiques et soumises à la licence choisie par l’utilisateur.
+      </p>
+    </div>
+  </div>
+</div>
