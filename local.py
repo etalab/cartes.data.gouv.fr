@@ -1,8 +1,12 @@
 import os
+from pathlib import Path
 
 from umap.settings.base import *   # pylint: disable=W0614,W0401
 
-PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
+if Path('/srv/umap').exists():  # Production server
+    PROJECT_DIR = '/srv/umap'
+else:  # local dev
+    PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 SECRET_KEY = "the answer to life the universe and everything"
 INTERNAL_IPS = ('127.0.0.1', )
@@ -22,11 +26,11 @@ DATABASES = {
     }
 }
 
-TEMPLATES[0]['DIRS'].insert(0, os.path.join(PROJECT_DIR, "templates"))
+TEMPLATES[0]['DIRS'].insert(0, os.path.join(PROJECT_DIR, "theme/templates"))
 
 
 STATICFILES_DIRS = (
-    (os.path.join(PROJECT_DIR, "static")),
+    (os.path.join(PROJECT_DIR, "theme/static")),
 ) + STATICFILES_DIRS
 
 WSGI_APPLICATION = 'umap.wsgi.application'
@@ -80,10 +84,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 UMAP_USE_UNACCENT = True
 
 # For static deployment
-STATIC_ROOT = os.environ.get('STATIC_ROOT')
+STATIC_ROOT = os.environ.get('STATIC_ROOT', '/srv/umap/static_root')
 
 # For users' statics (geojson mainly)
-MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
+MEDIA_ROOT = os.environ.get('MEDIA_ROOT', '/srv/umap/media_root')
 
 # Default map location for new maps
 LEAFLET_LONGITUDE = 2
