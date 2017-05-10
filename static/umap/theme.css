@@ -20,10 +20,9 @@ ol {
 /* **************************** */
 input[type="submit"], .button {
     background-color: #2185d0;
-    color: #eeeeec;
     padding-left: 20px;
     padding-right: 20px;
-    font-family: 'fira_sansregular';
+    font-size: 1rem;
 }
 input[type="submit"]:hover, .button:hover {
     background-color: #1678c2;
